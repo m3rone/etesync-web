@@ -5,13 +5,34 @@
 
 The EteSync Web App - Use EteSync from the browser!
 
+# Docker support
+
+This fork specifically adds Docker support and nothing else. You can build your own image or use a prebuilt one called `ghcr.io/m3rone/etesync-web-docker:latest`
+
+It uses nginx to serve the webapp, so you can use environment variables to configure the web server<sup>[1](https://github.com/docker-library/docs/tree/master/nginx#using-environment-variables-in-nginx-configuration-new-in-119)</sup>.
+
+## Running
+
+Check out the [docker-compose.yaml](https://raw.githubusercontent.com/m3rone/etesync-web/refs/heads/docker/docker-compose.yaml) file for a very basic deployment. If you deploy this as is, it will be available on [localhost:8090](http://localhost:8090).
+
+## Building your own
+
+You can clone the repo (make sure you are in the `docker` branch), edit the `Dockerfile` if needed (to change the default server, perhaps), and run `make build`.
+
+If you want to publish it to your own registry, change the `DOCKER_IMAGE_NAME` env variable in the `.env` file to the correct name you need and run `make publish`.
+
+No files have been changed in the repo apart from a few additions to make it possible to build the docker images.
+Everything below is unedited from the original repo.
+Unaffiliated with Etesync and all that.
+
+---
 
 ![GitHub tag](https://img.shields.io/github/tag/etesync/etesync-web.svg)
 [![Chat with us](https://img.shields.io/badge/chat-IRC%20|%20Matrix%20|%20Web-blue.svg)](https://www.etebase.com/community-chat/)
 
 For notes, please refer to [the EteSync Notes](https://github.com/etesync/etesync-notes/) repository.
 
-# Usage
+## Usage
 
 A live instance is available on: https://pim.etesync.com
 

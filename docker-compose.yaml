@@ -1,0 +1,7 @@
+services:
+  etesync-web:
+    container_name: etesync-web
+    image: ghcr.io/m3rone/etesync-web-docker:latest
+    ports:
+      - 8090:80
+    restart: unless-stopped
